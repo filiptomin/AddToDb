@@ -1,0 +1,45 @@
+﻿@page
+@model AddToDb.Pages.ViewGamesModel
+@{
+    ViewData["Title"] = "ViewGames";
+}
+
+<h2>Games</h2>
+
+<p>
+    <a class="btn btn-primary btn-lg " asp-page="AddGame">Add new game</a>
+</p>
+<table class="table table-dark">
+    <thead>
+        <tr>
+            <th scope="col">Game name</th>
+            <th scope="col">Autor </th>
+            <th scope="col">ReleaseDay</th>
+            
+           
+
+
+
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.Games)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Title)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Autor)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.RealseDay)
+                </td>
+                
+
+
+
+            </tr>
+        }
+    </tbody>
+</table>
